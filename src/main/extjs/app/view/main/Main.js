@@ -1,47 +1,79 @@
-/**
- * This class is the main view for the application. It is specified in app.js as the
- * "autoCreateViewport" property. That setting automatically applies the "viewport"
- * plugin to promote that instance of this class to the body element.
- *
- * TODO - Replace this content of this view to suite the needs of your application.
- */
+
 Ext.define('qqext.view.main.Main', {
-    extend: 'Ext.container.Container',
-    requires: [
-        'qqext.view.main.MainController',
-        'qqext.view.main.MainModel'
-    ],
+	extend: 'Ext.panel.Panel',
+	requires: [
+		'qqext.view.main.MainController',
+		'qqext.view.main.MainModel'
+	],
+//	renderTo: Ext.get("mainWindow"),
+	xtype: 'app-main',
+	title: 'Hello',
+	controller: 'main',
+	viewModel: {
+		type: 'main'
+	},
+	layout: {
+		type: 'hbox'
+	},
+	autoScroll: true,
+	dockedItems: [{
+			xtype: 'toolbar',
+			items: [{
+					text: 'hello',
+					handler: function (btn) {
+						var panel = btn.up('panel');
+						var left = panel.items.getAt(0);
+						left.setHtml(left.html +
+								'<ul><li>This area is commonly used for navigation, for example, using a "tree" component.</li></ul>'
+								);
+					}
+				},
+				'->',
+				{
+					text: 'goodbye',
+					handler: function (btn) {
+						var panel = btn.up('panel');
+						var left = panel.items.getAt(2).items.getAt(0);
+						left.setHtml(left.html +
+								'<h1>Another container</h1>'
+								);
+					}
+				}
 
-    xtype: 'app-main',
-    
-    controller: 'main',
-    viewModel: {
-        type: 'main'
-    },
-
-    layout: {
-        type: 'border'
-    },
-
-    items: [{
-        xtype: 'panel',
-        bind: {
-            title: '{name}'
-        },
-        region: 'west',
-        html: '<ul><li>This area is commonly used for navigation, for example, using a "tree" component.</li></ul>',
-        width: 250,
-        split: true,
-        tbar: [{
-            text: 'Button',
-            handler: 'onClickButton'
-        }]
-    },{
-        region: 'center',
-        xtype: 'tabpanel',
-        items:[{
-            title: 'Tab 1',
-            html: '<h2>Content appropriate for the current navigation.</h2>'
-        }]
-    }]
+			]
+		}],
+	defaults: {
+		height: '100%'
+	},
+	items: [{
+			autoScroll: true,
+			xtype: 'panel',
+			flex: 1,
+			bind: {
+				title: '{name}'
+			},
+//        region: 'west',
+			html: '<ul><li>This area is commonly used for navigation, for example, using a "tree" component.</li></ul>' +
+					'<ul><li>This area is commonly used for navigation, for example, using a "tree" component.</li></ul>' +
+					'<ul><li>This area is commonly used for navigation, for example, using a "tree" component.</li></ul>' +
+					'<ul><li>This area is commonly used for navigation, for example, using a "tree" component.</li></ul>',
+			tbar: [{
+					text: 'Button',
+					handler: 'onClickButton'
+				}]
+		}, {
+			xtype: 'splitter',
+			width: 1
+		},
+		{
+//					region: 'center',
+			xtype: 'tabpanel',
+			flex: 4.5,
+			items: [{
+					autoScroll: true,
+					title: 'Tab 1',
+					html: '<h2>Content appropriate for the current navigation.</h2>',
+					width: '100%'
+				}]
+		}]
 });
