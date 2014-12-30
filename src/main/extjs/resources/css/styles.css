@@ -1,0 +1,14 @@
+div.main-title {
+    text-align: left;
+    float: left;
+	font: bold 1.8em Arial, sans-serif;
+	color: #fff;
+	text-shadow: 3px 2px 3px #000;
+	margin-left: 50px;
+}
+
+div.main-fio {
+    text-align: left;
+    float: right;
+    margin-right: 5px;
+}
