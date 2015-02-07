@@ -27,14 +27,29 @@ Ext.define('qqext.view.main.Main', {
 	items: [{
 			autoScroll: true,
 			xtype: 'panel',
+			cls: 'mypanel',
 			flex: 1,
 			bind: {
 				title: '{name}'
 			},
-			html: '<ul><li>This area is commonly used for navigation, for example, using a "tree" component.</li></ul>' +
-					'<ul><li>This area is commonly used for navigation, for example, using a "tree" component.</li></ul>' +
-					'<ul><li>This area is commonly used for navigation, for example, using a "tree" component.</li></ul>' +
-					'<ul><li>This area is commonly used for navigation, for example, using a "tree" component.</li></ul>',
+			items: [
+				Ext.create("Ext.Component", {
+					html: "Sample component",
+					style: {
+						backgroundColor: "yellow",
+						width: "100px",
+						height: "40px",
+						color: 'red',
+						padding: "5px",
+						marginLeft: 'auto',
+						marginRight: 'auto',
+						borderWidth: "2px",
+						borderStyle: "solid",
+						borderColor: "black"
+					}
+				})
+
+			],
 			tbar: [{
 					text: 'Button',
 					handler: 'onClickButton'
