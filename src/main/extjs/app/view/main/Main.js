@@ -1,72 +1,38 @@
 
 Ext.define('qqext.view.main.Main', {
-	extend: 'Ext.panel.Panel',
+	extend: 'Ext.container.Container',
 	alias: 'widget.main',
 	requires: [
 		'qqext.view.main.MainController',
 		'qqext.view.main.MainModel',
-		'qqext.view.header.Header'
+		'qqext.view.header.Header',
+		'qqext.view.header.MainTitle',
+		'Ext.layout.container.VBox'
 	],
 	controller: 'main',
-	viewModel: {
-		type: 'main'
-	},
-	header: {
-		bind: {
-			html: '<div class="main-title">{title}</div>' +
-					'<div class="main-fio">{fio}</div>'
-		}
-	},
+	/*
+	 viewModel: {
+	 type: 'main'
+	 },
+	 header: {
+	 bind: {
+	 html: '<div class="main-title">{title}</div>' +
+	 '<div class="main-fio">{fio}</div>'
+	 }
+	 },
+	 */
 	layout: {
-		type: 'hbox'
+		type: 'vbox'
 	},
 	overflowY: 'auto',
 	dockedItems: [{
 			xtype: 'menuheader'
 		}],
 	items: [{
-			autoScroll: true,
-			xtype: 'panel',
-			cls: 'mypanel',
-			flex: 1,
-			bind: {
-				title: '{name}'
-			},
-			items: [
-				Ext.create("Ext.Component", {
-					html: "Sample component",
-					style: {
-						backgroundColor: "yellow",
-						width: "100px",
-						height: "40px",
-						color: 'red',
-						padding: "5px",
-						marginLeft: 'auto',
-						marginRight: 'auto',
-						borderWidth: "2px",
-						borderStyle: "solid",
-						borderColor: "black"
-					}
-				})
-
-			],
-			tbar: [{
-					text: 'Button',
-					handler: 'onClickButton'
-				}]
+			xtype: 'maintitle',
+			width: '100%'
 		}, {
-			xtype: 'splitter',
-			width: 1
-		},
-		{
-//					region: 'center',
-			xtype: 'tabpanel',
-			flex: 4.5,
-			items: [{
-					autoScroll: true,
-					title: 'Tab 1',
-					html: '<h2>Content appropriate for the current navigation.</h2>'
-				}]
+			xtype: 'menuheader'
 		}],
 	initComponent: function () {
 		this.callParent();
