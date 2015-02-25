@@ -4,25 +4,46 @@
 Ext.define('qqext.view.header.Header', {
 	extend: 'Ext.toolbar.Toolbar',
 	alias: 'widget.menuheader',
+	requires: [
+		'Ext.button.Button',
+		'Ext.toolbar.Fill'
+	],
+	id: 'main-toolbar',
 	items: [{
-			text: 'hello',
-			handler: function (btn) {
-				var panel = btn.up('panel');
-				var left = panel.items.getAt(0);
-				left.setHtml(left.html +
-						'<ul><li>This area is commonly used for navigation, for example, using a "tree" component.</li></ul>'
-						);
-			}
+			text: 'Вернуться в поиск',
+			cls: 'back_btn'
+		}, {
+			text: 'Добавить',
+			cls: 'add_btn'
+		}, {
+			text: 'Поиск',
+			cls: 'search_btn'
+		}, {
+			text: 'Очистить',
+			cls: 'clean_btn'
+		}, {
+			text: 'Редактировать',
+			cls: 'edit_btn'
+		}, {
+			text: 'Сохранить',
+			cls: 'save_btn'
+		}, {
+			text: 'Печать',
+			cls: 'print_btn'
+		}, {
+			text: 'Удалить',
+			cls: 'remove_btn'
+		}, {
+			text: 'Регистрировать',
+			cls: 'reg_btn'
 		},
 		'->',
 		{
-			text: 'goodbye',
-			handler: function (btn) {
-				var panel = btn.up('panel');
-				var left = panel.items.getAt(2).items.getAt(0);
-				left.setHtml(left.html +
-						'<h1>Another container</h1>'
-						);
-			}
+			text: 'В начало',
+			cls: 'to_begin_btn'
+		},
+		{
+			text: 'Выйти',
+			cls: 'quit_btn'
 		}]
 });

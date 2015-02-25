@@ -1,0 +1,102 @@
+/* 
+    Created on : 26.09.2014, 11:58:49
+    Author     : shapovalova
+*/
+#main-toolbar .x-btn{
+    background-repeat:no-repeat;
+    background-position:0.7em center;
+    background-size:1.3em 1.3em;
+    padding-left:2.2em;
+    padding-right:0.3em;
+    margin-left:0;
+    border-right:1px inset #506A8C !important;
+    background-color:transparent;
+}
+
+#main-toolbar .add_btn {
+    background-image:url(../images/i_add.png);
+}
+#main-toolbar .search_btn {
+    background-image:url(../images/i_binok.png);
+}
+#main-toolbar .clean_btn {
+    background-image:url(../images/eraser.png);
+}
+#main-toolbar .edit_btn {
+    background-image:url(../images/i_edit.png);
+}
+#main-toolbar .save_btn {
+    background-image:url(../images/i_save.png);
+}
+#main-toolbar .remove_btn{
+    background-image:url(../images/delete.png);
+}
+#main-toolbar .reg_btn {
+    background-image:url(../images/i_ok.png);
+    border-right:none !important;
+}
+#main-toolbar .print_btn {
+    background-image:url(../images/printer.png);
+}
+#main-toolbar .back_btn {
+    background-image:url(../images/i_back.png);
+    margin-left:0 !important;
+}
+#main-toolbar .to_begin_btn {
+    background-image:url(../images/home.png);
+}
+#main-toolbar .quit_btn {
+    background-image:url(../images/exit.png);
+    margin-right:0 !important;
+    border-right:none !important;
+}
+.add_small_btn,
+.del_small_btn{
+    background-repeat:no-repeat;
+    background-position:left center;
+    background-color:transparent;
+    border:none;
+    width:17px;
+    height:17px;
+    padding-left:17px;
+    margin:2px 0 2px 3px;
+    overflow:hidden;
+}
+.add_small_btn{
+    background-image:url(../images/plus.png);
+}
+.del_small_btn{
+    background-image:url(../images/del.png);
+}
+
+.attached_section .x-btn{
+    background-color:transparent;
+    background-repeat:no-repeat;
+    border:none;
+}
+.attach .x-btn{
+    background-image:url(../images/attached.png);
+    background-repeat:no-repeat;
+    background-position:left center;
+    margin-left:20px;
+    padding:3px 20px;
+}
+.garbage{
+    background-image:url(../images/attach_del.png);
+    margin-left:10px;
+}
+
+/*прячем счетчик у полей вроде Года рождения*/
+div.x-form-spinner-up, div.x-form-spinner-down{
+    display:none;
+}
+/*кнопки и даты соисполнителя*/
+.exec_fld_cls{
+    background-size:100%;
+    margin-top:10px;
+    left: 0 !important;
+    margin-left: 670px !important;
+}
+.coexec input[name="coexecDate"]{
+    width:110px !important;
+}

@@ -7,7 +7,7 @@ Ext.define('qqext.view.header.MainTitle', {
 		fio: ''
 	},
 	initComponent: function(){
-		this.update({fio: 'СИЦ С. С.'});
+		this.update({fio: qqext.fio});
 		this.callParent();
 	}
 });

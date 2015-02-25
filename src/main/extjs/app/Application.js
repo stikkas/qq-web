@@ -1,13 +1,12 @@
 
 Ext.define('qqext.Application', {
     extend: 'Ext.app.Application',
-    
     name: 'qqext',
-
-    stores: [
-    ],
-    
+	requires: [
+		'qqext.view.main.Main'
+	],
     launch: function () {
-//		Ext.create('qqext.view.main.Main');
+		qqext.fio = 'Иванов И. П.';
+		Ext.create('widget.main');
     }
 });
