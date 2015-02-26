@@ -45,18 +45,100 @@
 #main-toolbar a{
     padding:10px 0;
 }
-#article-info {
-	border: solid 1px #2d446d;
+
+/* рабочая область */
+#work-pane {
+	margin: 10px 5px 0px 0px;
+}
+/* левое меню */
+#article-info{
+    background:url(../images/vmenu_bg.png) no-repeat;
+    background-size:100% 100%;
+    border:1px solid #38547B;
+    min-width:13em;
 	margin: 10px 10px 0px 0px;
 }
-#work-pane {
-	margin: 10px 0px 0px 0px;
+#article-info a {
+    color:#2D446D;
+    font:1.63em 'Lucida Sans Unicode', sans-serif;
+    border:none;
+    border-bottom:1px solid #38547B;
+    background-image:-moz-linear-gradient(top, #7D95B4, #ABBED8, #C7D0DC, #ABBED8, #7D95B4);
+    background-image:-webkit-gradient(linear, center top, center bottom, from(#7D95B4), to(#7D95B4), color-stop(25%, #ABBED8), color-stop(50%, #C7D0DC), color-stop(75%, #ABBED8));
+    background: -o-linear-gradient(top, #7D95B4, #ABBED8, #C7D0DC, #ABBED8, #7D95B4);
+    background: -ms-linear-gradient(top, #7D95B4, #C7D0DC, #7D95B4);
+    height:auto;
+    position:relative !important;
+    top: 0 !important;
 }
-/*panel
+#article-info a .x-btn-button{
+    text-align:left;
+    height:auto;
+    padding:5% 0;
+}
+#article-info a .x-btn-inner{
+    color:#2D446D;
+    font:bold 0.8em 'Lucida Sans Unicode', sans-serif;
+    line-height:1.1;
+    text-align:left;
+    white-space:normal;
+    word-wrap:break-word;
+}
+#article-info a.active-article {
+    background-image:-moz-linear-gradient(top, #59769C, #768EAE, #59769C);
+    background-image:-webkit-gradient(linear, center top, center bottom, from(#59769C), to(#59769C), color-stop(50%, #768EAE));
+    background: -o-linear-gradient(top, #59769C, #768EAE, #59769C);
+    background: -ms-linear-gradient(top, #59769C, #768EAE, #59769C);
+}
+#article-info a.active-article .x-btn-inner{
+    color:#fff;
+}
+/* цвет заденого фона для рабочей области */
+#main-container {
+    background-image:-moz-linear-gradient(right bottom, #DDE1E8, #fff);
+    background-image:-webkit-gradient(linear, right bottom, left top, from(#DDE1E8), to(#fff));
+    background: -o-linear-gradient(left, #DDE1E8, #fff);
+    background: -ms-linear-gradient(left, #DDE1E8, #fff);
+	/* без этого extjs опускает контейнер так что получается белая полоска между toolbar и главным контейнером */
+	margin-top: -2px;
+}
+/* Панель ЖВК */
+#jvk .x-panel-header {
+    border:1px solid #38547B !important;
+    padding:5px 5px;
+    background-color:#C1CEE1;
+    background-image:-moz-linear-gradient(left, #DDE3EB, #fff);
+    background-image:-webkit-gradient(linear, left center, right center, from(#DDE3EB), to(#fff));
+    background: -o-linear-gradient(left, #DDE3EB, #fff);
+    background: -ms-linear-gradient(left, #DDE3EB, #fff);
+}
+#jvk .x-panel-header .x-title-text {
+    font:bold 1.45em Arial, sans-serif;
+	color: #6A84A6;
+	text-align: center;
+}
+/*status*/
+/*
+.vmenu .reg_panel .x-box-inner{
+    margin:5px auto;
+    width:11.5em !important;
+}
+.vmenu .reg_panel .x-box-inner label{
+    word-spacing:normal;
+}
+.vmenu .reg_panel .x-box-inner .x-box-item{
+    margin:2px 3px;
+    vertical-align:middle;
+}
+
+
+/*panel*/
 .x-panel-body-default{
-    background-color:transparent;
+    background-color:transparent !important;
     border-color:#2D446D !important;
 }
+
+/*
 .x-container .x-panel{
     margin-bottom:10px;
 }
@@ -75,12 +157,6 @@
     padding-left:20px;
 }
 
-.x-border-layout-ct{
-    background-image:-moz-linear-gradient(right bottom, #DDE1E8, #fff);
-    background-image:-webkit-gradient(linear, right bottom, left top, from(#DDE1E8), to(#fff));
-    background: -o-linear-gradient(left, #DDE1E8, #fff);
-    background: -ms-linear-gradient(left, #DDE1E8, #fff);
-}
 
 .title_cls .x-panel-header-default{
     border:1px solid #38547B;
@@ -90,18 +166,6 @@
     background: -o-linear-gradient(left, #758FAF, #DEE2E9);
     background: -ms-linear-gradient(left, #758FAF, #DEE2E9);
 }
-.x-panel-header-default,
-label.journal_title_label{
-    font:bold 1.2em Arial, sans-serif;
-    border:1px solid #38547B !important;
-    padding:5px 5px;
-    background-color:#C1CEE1;
-    background-image:-moz-linear-gradient(left, #DDE3EB, #fff);
-    background-image:-webkit-gradient(linear, left center, right center, from(#DDE3EB), to(#fff));
-    background: -o-linear-gradient(left, #DDE3EB, #fff);
-    background: -ms-linear-gradient(left, #DDE3EB, #fff);
-}
-
 .big_title_panel.collapse_section legend{
     background-color:#DDE3EB;
     margin-left:0;
@@ -110,86 +174,18 @@ label.journal_title_label{
     border-left:none;
 }
 
-.journal_title_label{
-    color:#6A84A6;
-    text-align:center;
-    padding:10px 0;
-}
 .title_cls .x-panel-header label{
     color:#fff;
     font: bold 1.8em Arial, sans-serif;
     text-shadow:3px 2px 3px #000;
     margin-left:50px;
 }
-.title_cls label.user_name{
-    font-size:1em;
-    left:85% !important;
-}
+
 .x-box-layout-ct.x-panel-body-default.x-noborder-trbl{
     background-image:-moz-linear-gradient(right, #758FAF, #D1D8E2, #CBD3DE);
     background-image:-webkit-gradient(linear, right center, left center, from(#758FAF), to(#CBD3DE), color-stop(46%, #D1D8E2));
     background: -o-linear-gradient(right, #758FAF, #D1D8E2, #CBD3DE);
     background: -ms-linear-gradient(right, #758FAF, #D1D8E2, #CBD3DE);
-}
-
-.vmenu{
-    background:url(../images/vmenu_bg.png) no-repeat;
-    background-size:100% 100%;
-    border:1px solid #38547B;
-    min-width:13em;
-}
-.vmenu div{
-    width:100% !important;
-}
-.vmenu a{
-    color:#2D446D;
-    font:1.5em 'Lucida Sans Unicode', sans-serif;
-    text-align:left;
-    border:none;
-    border-bottom:1px solid #38547B;
-    background-image:-moz-linear-gradient(top, #7D95B4, #ABBED8, #C7D0DC, #ABBED8, #7D95B4);
-    background-image:-webkit-gradient(linear, center top, center bottom, from(#7D95B4), to(#7D95B4), color-stop(25%, #ABBED8), color-stop(50%, #C7D0DC), color-stop(75%, #ABBED8));
-    background: -o-linear-gradient(top, #7D95B4, #ABBED8, #C7D0DC, #ABBED8, #7D95B4);
-    background: -ms-linear-gradient(top, #7D95B4, #C7D0DC, #7D95B4);
-    height:auto;
-    position:relative !important;
-    top: 0 !important;
-}
-.vmenu a .x-btn-button{
-    height:auto;
-    padding:5% 0;
-}
-.vmenu a .x-btn-inner{
-    color:#2D446D;
-    font:bold 0.8em 'Lucida Sans Unicode', sans-serif;
-    line-height:1.1;
-    text-align:left;
-    white-space:normal;
-    word-wrap:break-word;
-    //width:80%;
-}
-.vmenu a.active-article {
-    background-image:-moz-linear-gradient(top, #59769C, #768EAE, #59769C);
-    background-image:-webkit-gradient(linear, center top, center bottom, from(#59769C), to(#59769C), color-stop(50%, #768EAE));
-    background: -o-linear-gradient(top, #59769C, #768EAE, #59769C);
-    background: -ms-linear-gradient(top, #59769C, #768EAE, #59769C);
-}
-.vmenu a.active-article .x-btn-inner{
-    color:#fff;
-}
-
-/*status*/
-/*
-.vmenu .reg_panel .x-box-inner{
-    margin:5px auto;
-    width:11.5em !important;
-}
-.vmenu .reg_panel .x-box-inner label{
-    word-spacing:normal;
-}
-.vmenu .reg_panel .x-box-inner .x-box-item{
-    margin:2px 3px;
-    vertical-align:middle;
 }
 
 .srch{
@@ -225,6 +221,11 @@ label.journal_title_label{
 }
 .x-column-header-over{
     background-color:transparent;
+}*/
+.x-grid-header-ct {
+    border-right: 1px solid;
+    border-left: 1px solid;
+	border-color: #38547b;
 }
 .x-grid-header-ct .x-column-header{
     background-color: #98AAC2;
@@ -232,11 +233,11 @@ label.journal_title_label{
     border-top:none;
     border-left:1px solid;
     border-color:#AABDD9;
-    //border-color:#2D446D;
-    //color:#2D446D;
     color:#fff;
     text-align:center;
+	font: bold 13px/15px helvetica,arial,verdana,sans-serif;
 }
+
 .x-grid-header-ct .x-column-header .x-column-header-text{
     white-space:normal;
     height:30px;
@@ -261,6 +262,7 @@ label.journal_title_label{
 .x-grid-view {
     overflow-x:hidden !important;
 }
+/*
 .tbl_cls{
     margin:5px 10px 0 10px;
 }
@@ -297,12 +299,30 @@ label.journal_title_label{
 .table_style .tbl_cls > .x-grid-header-ct .x-box-inner .x-box-target{
     width:100% !important;
 }
-
+*/
 .x-toolbar.x-docked-bottom{
     padding-top:3px;
     padding-bottom:3px;
+	background-color: white;
+	background-image: none;
+	border-color: #157fcc;
+	padding: 6px 0 6px 8px;
 }
 
+.x-toolbar.x-docked-bottom .x-toolbar-text {
+	font: normal 12px tahoma,arial,verdana,sans-serif;
+}
+.x-toolbar.x-docked-bottom .x-toolbar-separator-horizontal {
+	margin: 0 8px 0 0;
+	height: 14px;
+	border-style: solid;
+	border-width: 0 0 0 1px;
+	border-left-color: #e1e1e1;
+	border-right-color: white;
+}
+.x-btn.x-btn-default-toolbar-small {
+	border: none;
+}
 /*fields*/
 /*
 .x-form-type-text{
@@ -456,9 +476,7 @@ div.collapse_section{
 }
 */
 /*buttons*/
-/*
 .x-btn-icon-el {
-	//    display:none;
     background-color:transparent !important;
 }
 .x-btn-over,
@@ -466,7 +484,22 @@ div.collapse_section{
 .x-window .x-btn{
     background-color:transparent;
 }
-*/
+.x-tbar-page-last {
+	background-image: url(../images/grid/page-last.png);
+}
+.x-tbar-page-first {
+	background-image: url(../images/grid/page-first.png);
+}
+.x-tbar-page-next {
+	background-image: url(../images/grid/page-next.png);
+}
+.x-tbar-page-prev {
+	background-image: url(../images/grid/page-prev.png);
+}
+.x-tbar-loading {
+	background-image: url(../images/grid/refresh.png);
+}
+
 /*модальные окна, сообщения (кнопки)*/
 /*
 .x-window{
@@ -539,10 +572,6 @@ div.collapse_section{
 .pad_l-r10 .x-column-header-inner{
     padding-left:10px !important;
     padding-right:10px !important;
-}
-.journal_st .x-column-header-inner{
-    padding-left:0px;
-    padding-right:0px;
 }
 .float_l{
     float:left;

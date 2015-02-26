@@ -7,6 +7,8 @@ Ext.define('qqext.Application', {
 	],
     launch: function () {
 		qqext.fio = 'Иванов И. П.';
+		qqext.archive = 'Справочно-информационный центр федеральных государственных архивов';
+		qqext.isSic = true;
 		Ext.create('widget.main');
     }
 });

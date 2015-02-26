@@ -31,6 +31,7 @@ Ext.define('qqext.view.main.Main', {
 			width: '100%',
 			flex: 1,
 			overflowY: 'auto',
+			id: 'main-container',
 			defaults: {
 				minHeight: 400,
 				height: '100%'

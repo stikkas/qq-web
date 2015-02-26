@@ -15,7 +15,7 @@ Ext.define('qqext.view.info.InfoPane', {
 		width: '100%'
 	},
 	items: [{
-			text: 'ЖВК'	
+			text: 'ЖВК'
 		}, {
 			text: 'Поиск'
 		}, {
