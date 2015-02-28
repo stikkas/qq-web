@@ -9,7 +9,9 @@ Ext.define('qqext.view.work.Jvk', {
 		'Ext.grid.column.Date',
 		'Ext.form.field.Text',
 		'Ext.form.field.ComboBox',
-		'Ext.form.field.Date'
+		'Ext.form.field.Date',
+		'qqext.store.ArchiveJvk',
+		'qqext.store.SicJvk'
 	],
 	id: 'jvk',
 	dockedItems: [{
@@ -216,10 +218,13 @@ Ext.define('qqext.view.work.Jvk', {
 	_acls: [1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1],
 	initComponent: function () {
 		var jvkPane = this;
-		if (qqext.isSic)
+		if (qqext.isSic) {
 			jvkPane.columns.items = jvkPane._crtCols(jvkPane._scls);
-		else 
+			jvkPane.store = Ext.create('qqext.store.SicJvk');
+		}else{ 
 			jvkPane.columns.items = jvkPane._crtCols(jvkPane._acls);
+			jvkPane.store = Ext.create('qqext.store.ArchiveJvk');
+		}
 
 		jvkPane.callParent();
 		jvkPane.setTitle(qqext.archive);

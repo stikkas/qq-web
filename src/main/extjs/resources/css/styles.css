@@ -320,9 +320,12 @@
 	border-left-color: #e1e1e1;
 	border-right-color: white;
 }
-.x-btn.x-btn-default-toolbar-small {
-	border: none;
+
+.x-btn.x-btn-default-toolbar-small,
+.x-btn.x-item-disabled.x-btn-disabled.x-btn-default-toolbar-small {
+	border-color: transparent;
 }
+
 /*fields*/
 /*
 .x-form-type-text{
