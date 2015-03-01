@@ -3,7 +3,8 @@ Ext.define('qqext.Application', {
     extend: 'Ext.app.Application',
     name: 'qqext',
 	requires: [
-		'qqext.view.main.Main'
+		'qqext.view.main.Main',
+		'Other.field.ComboBox'
 	],
     launch: function () {
 		qqext.fio = 'Иванов И. П.';

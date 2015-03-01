@@ -4,7 +4,6 @@ Ext.define('qqext.view.main.Main', {
 	alias: 'widget.main',
 	requires: [
 		'qqext.view.main.MainController',
-		'qqext.view.main.MainModel',
 		'qqext.view.header.Header',
 		'qqext.view.header.MainTitle',
 		'qqext.view.work.WorkPane',

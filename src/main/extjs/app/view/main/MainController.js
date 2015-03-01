@@ -1,4 +1,6 @@
-
+/**
+ * Основной контроллер
+ */
 Ext.define('qqext.view.main.MainController', {
     extend: 'Ext.app.ViewController',
 

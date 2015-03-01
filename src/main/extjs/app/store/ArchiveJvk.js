@@ -6,7 +6,7 @@ Ext.define('qqext.store.ArchiveJvk', {
 	model: 'qqext.model.ArchiveJvk',
 	proxy: {
 		type: 'table',
-		url: '/qq-web/api/jvk/archive'
+		url: 'api/jvk/archive'
 	}
 });
 

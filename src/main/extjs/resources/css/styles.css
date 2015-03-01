@@ -360,11 +360,13 @@ input.x-form-checkbox{
 .label_style .x-field-label-cell label{
     margin-top:5px;
 }
+*/
 .x-form-type-checkbox .x-form-cb-wrap,
 .x-form-type-checkbox .x-form-item-body,
 .x-form-type-text .x-form-item-body{
     vertical-align:middle;
 }
+/*
 .x-form-trigger-wrap[style*='visibility: hidden;'],
 .x-form-field[style*='visibility: hidden;']{
     display:none !important;     
