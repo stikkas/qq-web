@@ -21,6 +21,7 @@ import ru.insoft.archive.qqejb.dto.DictSVDto;
 public class DictService {
 	@Inject
 	DescriptorValueDao dvd;
+	
 
 	/**
 	 * Возвращает список состояний запроса
@@ -31,9 +32,42 @@ public class DictService {
 	List<DictDto> getQuestionStatuses() {
 		return dvd.getFullValues("Q_DICT_QUESTION_STATUSES");
 	}
+	/**
+	 * Возвращает список организаций (архивов) и их сокращений (литер)
+	 * @return справочник
+	 */
 	@GET
 	@Path("organizations")
 	List<DictSVDto> getOrganizations() {
 		return dvd.getFullShortValues("ORG_STRUCTURE");
 	}
+	/**
+	 * Возвращает список пользователей с правом исполнителя
+	 * @return справочник
+	 */
+	@GET
+	@Path("executors")
+	List<DictDto> getExecutors() {
+		return dvd.getUsersWithRule("Q_RULE_EXECUTOR");
+	}
+
+	/**
+	 * Возвращает список типов запросов и их сокращения
+	 * @return справочник
+	 */
+	@GET
+	@Path("questiontypes")
+	List<DictSVDto> getQuestionTypes() {
+		return dvd.getFullShortValues("Q_DICT_QUEST_TYPE");
+	}
+	/**
+	 * Возвращает список значений статусов уведомления
+	 * @return справочник
+	 */
+	@GET
+	@Path("notistats")
+	List<DictDto> getNotiStats() {
+		return dvd.getFullValues("Q_DICT_NOTIFY_STATUSES");
+	}
+
 }

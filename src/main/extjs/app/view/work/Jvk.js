@@ -36,7 +36,8 @@ Ext.define('qqext.view.work.Jvk', {
 //			width: 97,
 			items: [{
 					xtype: 'combobox',
-					store: Ext.create('StoreDict', 'organizations'),
+					store: 'organizations',
+					displayField: 'shortValue',
 					width: '90%',
 					listeners: {
 						select: 'applyFilter',
@@ -172,7 +173,7 @@ Ext.define('qqext.view.work.Jvk', {
 //			minWidth: 65,
 			items: [{
 					xtype: 'combobox',
-					store: Ext.create('StoreDict', 'organizations'),
+					store: 'organizations',
 					width: '90%',
 					listeners: {
 						select: 'applyFilter',
