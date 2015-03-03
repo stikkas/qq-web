@@ -14,9 +14,17 @@ Ext.define('qqext.model.Jvk', {
 			return v;
 		}},
 		// Нужна для раскрашивания просроченных заявок
-		{name: 'controlDate', type: 'date', defaultValue: null, dateFormat: 'd.m.Y'},
+		{name: 'controlDate', type: 'date', defaultValue: null, convert: function(v){
+			if (v)
+				return new Date(v);
+			return v;
+		}},
 		// Нужна для раскрашивания просроченных заявок
-		{name: 'planDate', type: 'date', defaultValue: null, dateFormat: 'd.m.Y'},
+		{name: 'planDate', type: 'date', defaultValue: null, convert: function(v){
+			if (v)
+				return new Date(v);
+			return v;
+		}},
 		{name: 'otKogo', type: 'string'},
 		{name: 'status', type: 'string'},
 		{name: 'executor', type: 'string'}
