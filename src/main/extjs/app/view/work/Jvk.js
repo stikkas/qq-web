@@ -10,8 +10,6 @@ Ext.define('qqext.view.work.Jvk', {
 		'Ext.form.field.Text',
 		'Ext.form.field.ComboBox',
 		'Ext.form.field.Date',
-		'qqext.store.Dict',
-		'qqext.store.DictSV',
 		'qqext.store.ArchiveJvk',
 		'qqext.store.SicJvk',
 		'qqext.view.work.JvkController'
@@ -98,7 +96,7 @@ Ext.define('qqext.view.work.Jvk', {
 			dataIndex: 'notiStat',
 			items: [{
 					xtype: 'combobox',
-					store: Ext.create('StoreDict', 'notistats'),
+					store: 'notistats',
 					width: '95%',
 					listeners: {
 						select: 'applyFilter',
@@ -113,7 +111,7 @@ Ext.define('qqext.view.work.Jvk', {
 			dataIndex: 'questionType',
 			items: [{
 					xtype: 'combobox',
-					store: Ext.create('StoreDictSV', 'questiontypes'),
+					store: 'questiontypes',
 					width: '90%',
 					displayField: 'shortValue',
 					listeners: {
@@ -142,7 +140,7 @@ Ext.define('qqext.view.work.Jvk', {
 //						minWidth: 130,
 			items: [{
 					xtype: 'combobox',
-					store: Ext.create('StoreDict', 'statuses'),
+					store: 'statuses',
 					width: '90%',
 					listeners: {
 						select: 'applyFilter',
@@ -188,7 +186,7 @@ Ext.define('qqext.view.work.Jvk', {
 //			minWidth: 115,
 			items: [{
 					xtype: 'combobox',
-					store: Ext.create('StoreDict', 'executors'),
+					store: 'executors',
 					width: '90%',
 					listeners: {
 						select: 'applyFilter',

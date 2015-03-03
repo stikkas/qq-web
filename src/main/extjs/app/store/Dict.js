@@ -5,9 +5,9 @@ Ext.define('qqext.store.Dict', {
 	extend: 'Ext.data.Store',
 	model: 'qqext.model.Dict',
 	alias: 'StoreDict',
-	requires: ['Ext.data.proxy.Ajax'],
+	requires: ['qqext.proxy.Combo'],
 	proxy: {
-		type: 'ajax',
+		type: 'combo',
 		reader: 'json'
 	},
 	/**

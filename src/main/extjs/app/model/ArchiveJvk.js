@@ -5,6 +5,6 @@ Ext.define('qqext.model.ArchiveJvk', {
 	extend: 'qqext.model.Jvk',
 	fields: [
 		{name: 'questionType', type: 'string'},
-		{name: 'execDate', type: 'string'}
+		{name: 'execDate', type: 'date', defaultValue: null, dateFormat: 'd.m.Y'}
 	]
 });

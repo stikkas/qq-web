@@ -4,7 +4,9 @@
 Ext.define('Other.field.ComboBox', {
 	override: 'Ext.form.field.ComboBox',
 	valueField: 'id',
-	editable: false
+	editable: false,
+	// Не посылать query параметр серверу
+	queryParam: false
 });
 
 

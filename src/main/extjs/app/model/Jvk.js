@@ -8,11 +8,15 @@ Ext.define('qqext.model.Jvk', {
 		{name: 'id', type: 'int'},
 		{name: 'litera', type: 'string'},
 		{name: 'number', type: 'string'},
-		{name: 'regDate', type: 'string'},
+		{name: 'regDate', type: 'date', defaultValue: null, convert: function(v){
+			if (v)
+				return new Date(v);
+			return v;
+		}},
 		// Нужна для раскрашивания просроченных заявок
-		{name: 'controlDate', type: 'string'},
+		{name: 'controlDate', type: 'date', defaultValue: null, dateFormat: 'd.m.Y'},
 		// Нужна для раскрашивания просроченных заявок
-		{name: 'planDate', type: 'string'},
+		{name: 'planDate', type: 'date', defaultValue: null, dateFormat: 'd.m.Y'},
 		{name: 'otKogo', type: 'string'},
 		{name: 'status', type: 'string'},
 		{name: 'executor', type: 'string'}
